@@ -18,33 +18,41 @@ Answer the questions, and write the required code.
 // A3: Initializers
 
 class User {
-    var salutation:String
-    var firstName:String
-    var lastName:String
-    var favoriteQuote:String = "I ♡ Swift"
-    var suffix:String?
-    
-    // Q4: Why does this only need two params?
-    // A4: The favoriteQuote has an initial value
-    init(salutation:String, firstName:String, lastName:String, suffix:String?=nil) {
-        self.salutation = salutation
-        self.firstName = firstName
-        self.lastName = lastName
-        self.suffix = suffix
-    }
-    
-    
-    init(salutation:String, firstName:String, lastName:String, suffix:String?=nil, favoriteQuote:String) {
-        self.salutation = salutation
-        self.firstName = firstName
-        self.lastName = lastName
-        self.favoriteQuote = favoriteQuote
-        self.suffix = suffix
-    }
-    
-    func introduceYourself() -> String {
-        return "My name is \(salutation) \(firstName) \(lastName) \(suffix ?? "") and I always say '\(favoriteQuote)'"
-    }
+  var salutation:String
+  var firstName:String
+  var lastName:String
+  var favoriteQuote:String? = "I ♡ Swift"
+  var suffix:String?
+
+  // Q4: Why does this only need two params?
+  // A4: The favoriteQuote has an initial value
+  init(salutation:String, firstName:String, lastName:String, suffix:String?=nil) {
+    self.salutation = salutation
+    self.firstName = firstName
+    self.lastName = lastName
+    self.suffix = suffix
+  }
+
+
+  init(salutation:String, firstName:String, lastName:String, suffix:String?=nil, favoriteQuote:String) {
+    self.salutation = salutation
+    self.firstName = firstName
+    self.lastName = lastName
+    self.favoriteQuote = favoriteQuote
+    self.suffix = suffix
+  }
+
+  init(_ salutation:String, _ firstName:String, _ lastName:String, _ suffix:String?=nil, _ favoriteQuote:String?=nil) {
+    self.salutation = salutation
+    self.firstName = firstName
+    self.lastName = lastName
+    self.favoriteQuote = favoriteQuote
+    self.suffix = suffix
+  }
+
+  func introduceYourself() -> String {
+    return "My name is \(salutation) \(firstName) \(lastName) \(suffix ?? "") and I always say '\(favoriteQuote)'"
+  }
 }
 
 // Q5: What is the name for the mechanism being used here: "String \(something)"
@@ -55,9 +63,11 @@ class User {
 // A6: Write code below.
 let user1 = User(salutation:"Mr", firstName:"Jason", lastName: "Noble")
 let user2 = User(salutation:"Mr", firstName:"Jason", lastName: "Noble", suffix: "III", favoriteQuote: "The rain in spain...")
+let user3 = User("Mr", "Jason", "Noble", "")
 
 user1.introduceYourself()
 user2.introduceYourself()
+user3.introduceYourself()
 
 // Q7: Add a required "salutation" to the User object.  Update all `init()` and `introduceYourself()` accordingly.
 // A7: Update the User class above.
