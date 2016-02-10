@@ -20,7 +20,7 @@ func maxDistanceOnCurrentTank(let gallonsRemaining:Float) -> Float {
 // Q2: re-write: "func canMakeIt() -> Bool" so that it takes all the params it needs
 // A2: write code below
 
-func canMakeIt(let milesToDestination:Float, let gallonsRemaining:Float) -> Bool {
+func canMakeIt(milesToDestination:Float, gallonsRemaining:Float) -> Bool {
     return maxDistanceOnCurrentTank(gallonsRemaining) > milesToDestination
 }
 

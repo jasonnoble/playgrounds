@@ -10,7 +10,7 @@ Review the following code, answer the questions and re-write the function below.
 // A2: Nothing
 
 // Q2: How else could we write this function signature?
-// Q2: func sumEvenAndOdd(cc:Int)
+// Q2: func sumEvenAndOdd(cc:Int) -> Void
 func doAThing(cc:Int) {
     var aa = 0, bb = 0
     
